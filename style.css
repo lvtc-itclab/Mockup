@@ -1,0 +1,305 @@
+/* ===================================================
+   &Proud Africa Starter Stylesheet
+   Designed for student HTML/CSS learning & responsiveness
+   =================================================== */
+
+/* CSS Variables for &Proud Brand Identity */
+:root {
+    --primary-color: #2E6F40;   /* Natural Green */
+    --accent-color: #E67E22;    /* Chitenge Orange */
+    --dark-color: #1A1A1A;      /* Charcoal */
+    --light-color: #F8F9FA;     /* Off-White */
+    --text-color: #333333;      /* Dark Body Text */
+    --border-color: #E2E8F0;    /* Light Gray */
+    --font-heading: 'Helvetica Neue', Arial, sans-serif;
+    --font-body: Arial, sans-serif;
+}
+
+/* Reset & Box Model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #FFFFFF;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Container & Section Layouts */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 65px 0;
+}
+
+.section-alt {
+    background-color: var(--light-color);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666666;
+    margin-bottom: 40px;
+}
+
+/* Responsive CSS Grid */
+.grid {
+    display: grid;
+    gap: 30px;
+}
+
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+/* Header & Navigation */
+.navbar {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: #FFFFFF;
+}
+
+.btn-nav {
+    background-color: var(--accent-color);
+    color: #FFFFFF !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('images/hero-sample.jpg') center/cover no-repeat;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 110px 20px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-tagline {
+    font-size: 1.25rem;
+    max-width: 650px;
+    margin: 0 auto 30px auto;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Process Section (Background Image: images/process-sample.jpg) */
+#process {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('images/process-sample.jpg') center/cover no-repeat fixed;
+    padding: 80px 0;
+    color: #FFFFFF;
+}
+
+.section-title-light {
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.section-subtitle-light {
+    color: #F0F0F0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.process-card {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-color);
+    padding: 25px;
+    border-radius: 6px;
+    border-top: 5px solid var(--accent-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.process-card:hover {
+    transform: translateY(-5px);
+}
+
+.process-card h3 {
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+.step-number {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #FFFFFF;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Products Section & Cards */
+.product-card {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    background: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.order-notice {
+    margin-top: 40px;
+    background: #FFF3CD;
+    border: 1px solid #FFEEBA;
+    padding: 15px 20px;
+    border-radius: 4px;
+    text-align: center;
+    color: #856404;
+}
+
+/* Footer & Contact Form */
+.footer {
+    background-color: var(--dark-color);
+    color: #FFFFFF;
+    padding: 60px 0 20px 0;
+}
+
+.contact-info h2 {
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.contact-info ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    background: #222222;
+    color: #FFFFFF;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #333333;
+    margin-top: 40px;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+#process .section-title {
+    color: #FFFFFF;
+}
+
+#process .section-subtitle {
+    color: #FFFFFF;
+}
